@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Information</title>
+    <style>
+        table, 
+        th, 
+        td 
+        {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>cust_id</th>
+            <th>name</th>
+            <!-- <th>dob</th> -->
+            <th>street</th>
+            <th>city</th>
+            <th>state</th>
+            <th>pin_code</th>
+            <th>email_id</th>
+            <th>phone_no</th>
+
+            <th>acc_no</th>
+            <th>acc_type</th>
+            <!-- <th>cust_id</th> -->
+            <th>acc_status</th>
+            <!-- <th>acc_activation_date</th> -->
+            <th>total_bal</th>
+
+            <!-- <th>acc_no</th>
+            <th>cust_id</th> -->
+            <th>amt_withdrawn</th>
+            <th>withdraw_time</th>
+
+            <!-- <th>rel_manager_id</th>
+            <th>rel_manager_name</th>
+            <th>bank_branch</th>
+            <th>pin_code</th>
+            <th>email_id</th>
+            <th>phone_no</th>
+
+            <th>rel_manager_id</th>
+            <th>cust_id</th> -->
+
+
+
+        </tr>
+        <% for(user of users) { %>
+            <tr>
+                <td><%= user.cust_id %></td>
+                <td><%= user.name %></td>
+                <!-- <td><%= user.dob %></td> -->
+                <td><%= user.street %></td>
+                <td><%= user.city %></td>
+                <td><%= user.state%></td>
+                <td><%= user.pin_code %></td>
+                <td><%= user.email_id%></td>
+                <td><%= user.phone_no %></td>
+
+                <!-- <td><%= user.acc_no %></td> -->
+                <td><%= user.acc_type %></td>
+                <!-- <td><%= user.cust_id %></td> -->
+                <td><%= user.acc_status %></td>
+                <!-- <td><%= user.acc_activation_date %></td> -->
+                <td><%= user.total_bal %></td>
+
+                <!-- <td><%= user.acc_no %></td>
+                <td><%= user.cust_id %></td> -->
+                <td><%= user.amt_withdrawn %></td>
+                <td><%= user.withdraw_time %></td>
+
+                <!-- <td><%= user.rel_manager_id %></td>
+                <td><%= user.rel_manager_name %></td>
+                <td><%= user.bank_branch %></td>
+                <td><%= user.pin_code %></td>
+                <td><%= user.email_id%></td>
+                <td><%= user.phone_no %></td>
+
+                <td><%= user.rel_manager_id %></td>
+                <td><%= user.cust_id %></td> -->
+
+            
+
+      
+
+                <!-- <td>
+
+                <form method="GET" action="/customer_info/<%=user.id%>/edit">
+                    <button>Edit username</button>
+                </form>
+                </td>
+
+                <td> -->
+
+
+
+
+
+            </tr>
+
+
+
+        <% } %>
+    </table>
+</body>
+</html>
+
+
+

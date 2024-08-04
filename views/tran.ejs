@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transaction Information</title>
+    <style>
+        table, 
+        th, 
+        td 
+        {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>acc_no</th>
+            <th>cust_id</th>
+            <th>amt_withdrawn</th>
+            <th>withdraw_time</th>
+         
+        </tr>
+        <% for(user of users) { %>
+            <tr>
+                <td><%= user.acc_no %></td>
+                <td><%= user.cust_id %></td>
+                <td><%= user.amt_withdrawn %></td>
+                <td><%= user.withdraw_time %></td>
+             
+            </tr>
+        <% } %>
+    </table>
+</body>
+</html>
+

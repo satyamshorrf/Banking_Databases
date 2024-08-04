@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Information</title>
+    <style>
+        table, 
+        th, 
+        td 
+        {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>cust_id</th>
+            <th>name</th>
+            <!-- <th>dob</th> -->
+            <th>street</th>
+            <th>city</th>
+            <th>state</th>
+            <th>pin_code</th>
+            <th>email_id</th>
+            <th>phone_no</th>
+
+        </tr>
+        <% for(user of users) { %>
+            <tr>
+                <td><%= user.cust_id %></td>
+                <td><%= user.name %></td>
+                <!-- <td><%= user.dob %></td> -->
+                <td><%= user.street %></td>
+                <td><%= user.city %></td>
+                <td><%= user.state%></td>
+                <td><%= user.pin_code %></td>
+                <td><%= user.email_id%></td>
+                <td><%= user.phone_no %></td>
+
+                <td>
+
+                <form method="GET" action="/customer_info/<%=user.id%>/edit">
+                    <button>Edit username</button>
+                </form>
+                </td>
+
+                <td>
+
+
+
+
+
+            </tr>
+
+
+
+        <% } %>
+    </table>
+</body>
+</html>
+
+
+
