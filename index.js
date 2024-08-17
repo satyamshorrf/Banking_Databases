@@ -17,53 +17,6 @@ const connection = mysql.createConnection({
 });
 
 
-  // All In One  Route   
-  app.get("/all", (req, res) => {
-    let q = `SELECT *
-FROM customer_info
-LEFT JOIN account_info
-ON customer_info.cust_id = account_info.cust_id
-UNION ALL
-SELECT *
-FROM customer_info
-RIGHT JOIN account_info
-ON customer_info.cust_id = account_info.cust_id
-WHERE customer_info.cust_id IS NULL`;
-  
-    try {
-      connection.query(q, (err, users) => {
-        if (err) throw err;
-        res.render("all.ejs", { users });
-      });
-    } catch (err) {
-      console.log(err);
-      res.send("some error in DB");
-    }
-  });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // Home Route
 app.get("/", (req, res) => {
     let q = `SELECT count(*) AS count FROM customer_info`;
@@ -249,6 +202,45 @@ app.delete("/posts/:id", (req, res) => {
 
 });
 
+
+
+
+  // Three table Join
+  app.get("/info", (req, res) => {
+    let q = ` SELECT 
+  ci.cust_id, 
+  ci.name, 
+  ci.dob, 
+  ci.street, 
+  ci.city, 
+  ci.state, 
+  ci.pin_code, 
+  ci.email_id, 
+  ci.phone_no, 
+  ai.acc_no, 
+  ai.acc_type, 
+  ai.acc_status, 
+  ai.acc_activation_date, 
+  ai.total_bal,
+  ti.amt_withdrawn, 
+  ti.withdraw_time
+FROM 
+  account_info ai
+JOIN 
+  customer_info ci ON ai.cust_id = ci.cust_id
+JOIN 
+  transaction_info ti ON ai.acc_no = ti.acc_no`;
+  
+    try {
+      connection.query(q, (err, users) => {
+        if (err) throw err;
+        res.render("all.ejs", { users });
+      });
+    } catch (err) {
+      console.log(err);
+      res.send("some error in DB");
+    }
+  });
 
 
 
